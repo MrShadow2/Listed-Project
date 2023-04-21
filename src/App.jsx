@@ -7,15 +7,19 @@ import "./App.css";
 const App = () => {
   const [value, setValue] = useState("");
   const [photoURL, setPhotoURL] = useState("");
-  function handleClick() {
-    signInWithPopup(auth, provider).then((data) => {
+  async function handleClick() {
+    try {
+      const data = await signInWithPopup(auth, provider);
       setValue(data.user.email);
       console.log(data.user);
       localStorage.setItem("email", data.user.email);
       console.log(data.user.photoURL);
       setPhotoURL(data.user.photoURL);
-    });
+    } catch (error) {
+      console.error(error);
+    }
   }
+  
   return (
     <div>
     {value ? (
