@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Home.css";
 import "./Test.css";
 import PieChart from "./PieChart";
 import Graph from "./Graph";

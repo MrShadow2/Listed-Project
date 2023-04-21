@@ -2,7 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { auth, provider } from "./config";
 import { signInWithPopup } from "firebase/auth";
+import { Link } from "react-router-dom";
 import Home from './Home'
+//import router
+
 import "./App.css";
 const App = () => {
   const [value, setValue] = useState("");
@@ -43,7 +46,7 @@ const App = () => {
         </h1>
         <div className="flex justify-center items-center w-96 ">
           <div className="flex justify-center items-center max-w-xs mx-auto bg-white-1000 border border-white-100 rounded-lg shadow md:p-2 dark:bg-white-400 dark:border-white-800 hover:bg-emerald-50  hover:shadow-lg transform hover:-translate-y-1  transition duration-300 ease-in-out">
-            <button onClick={handleClick} className="flex items-center justify-center p-2 ">
+            <Link to="/home"> <button onClick={handleClick} className="flex items-center justify-center p-2 ">
               <div className="flex items-center justify-center w-4 h-2 mr-5 rounded-full">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
@@ -53,7 +56,7 @@ const App = () => {
               <h1 className="text-gray-900 dark:text-black text-sm signinbtn">
                 Sign in with Google
               </h1>
-            </button>
+            </button></Link>
           </div>
 
           <div className="flex justify-center items-center max-w-xs mx-auto bg-white-1000 border border-white-100 rounded-lg shadow md:p-2 dark:bg-white-400 dark:border-white-800 m-4 hover:bg-emerald-50  hover:shadow-lg transform hover:-translate-y-1  transition duration-300 ease-in-out">
